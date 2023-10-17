@@ -1,0 +1,14 @@
+<h1>Root#index</h1>
+
+<%= render "pkusers/shared/links", resource_name: :pkuser, devise_mapping: Devise.mappings[:pkuser] %>
+
+<h2>User details</h2>
+
+<%= link_to "Edit User", edit_registration_path(current_pkuser) %>
+<%= link_to "View Passkeys", pkusers_passkeys_path %>
+
+<code>
+<%= current_pkuser.email %>
+<%= current_pkuser.webauthn_id %>
+</code>
+
