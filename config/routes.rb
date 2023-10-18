@@ -87,10 +87,13 @@ Rails.application.routes.draw do
     end
 
 
-        get '/auth/pksign_in', to: 'auth/pksessions#new', as: :new_user_pksession
+    get '/auth/pksign_in', to: 'auth/pksessions#new', as: :new_user_pksession
     post '/auth/pksign_in', to: 'auth/pksessions#create', as: :user_pksession
     delete '/auth/pksign_out', to: 'auth/pksessions#destroy', as: :destroy_user_pksession
 
+    get '/auth/pksignup', to: 'auth/pkregistrations#new', as: :new_user_pkregistration
+    post '/auth/pksignup', to: 'auth/pkregistrations#create', as: :user_pkregistration
+    
     post 'sign_up/new_challenge', to: 'auth/pkregistrations#new_challenge', as: :auth_pkregistration_challenge
     post 'sign_in/new_challenge', to: 'auth/pksessions#new_challenge', as: :auth_pksession_challenge
 
